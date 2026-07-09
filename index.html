@@ -14,17 +14,17 @@ layout: default
 </header>
 
 <section class="latest-posts">
-  <h2>Latest posts</h2>
+  <h2>Recent Posts</h2>
   {% if site.posts.size > 0 %}
   <ul class="post-list">
     {% for post in site.posts limit: 5 %}
     <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
     </li>
     {% endfor %}
   </ul>
-  <p><a href="{{ '/posts/' | relative_url }}">View all posts →</a></p>
+  <p><a href="{{ '/posts/' | relative_url }}">View archive →</a></p>
   {% else %}
   <p class="empty">No posts yet — check back soon.</p>
   {% endif %}

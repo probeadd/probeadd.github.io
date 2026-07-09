@@ -1,3 +1,8 @@
+---
+# Front matter (even empty) tells Jekyll to process this through the Sass
+# converter. Overrides jekyll-theme-primer's assets/css/style.scss so our
+# own monochrome styles win at /assets/css/style.css.
+---
 :root {
   --bg: #ffffff;
   --text: #1a1a1a;
@@ -59,14 +64,20 @@ a:hover {
 }
 
 /* Profile */
+.profile {
+  text-align: center;
+  padding: 2rem 0 1rem;
+}
+
 .profile h1 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.5rem;
   font-size: 1.9rem;
   letter-spacing: -0.01em;
 }
 
 .profile .tagline {
-  margin: 0 0 1.5rem;
+  margin: 0 auto 1.5rem;
+  max-width: 32ch;
   color: var(--muted);
 }
 
@@ -76,6 +87,7 @@ a:hover {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.25rem;
   font-size: 0.95rem;
 }
@@ -84,6 +96,45 @@ a:hover {
 h2 {
   font-size: 1.2rem;
   margin: 3rem 0 1rem;
+}
+
+.latest-posts {
+  margin-top: 4rem;
+}
+
+.archive-year {
+  font-size: 1rem;
+  color: var(--muted);
+  margin: 2.5rem 0 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.pagination a {
+  border-bottom: none;
+}
+
+.pagination a:hover {
+  border-bottom: 1px solid var(--text);
+}
+
+.pagination .page-count {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.pagination .disabled {
+  color: var(--border);
 }
 
 .empty {
@@ -99,16 +150,26 @@ h2 {
 
 .post-list li {
   display: flex;
-  justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
-  padding: 0.5rem 0;
+  gap: 1.5rem;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--border);
 }
 
+.post-list li a {
+  border-bottom: none;
+}
+
+.post-list li a:hover {
+  border-bottom: 1px solid var(--text);
+}
+
 .post-meta {
+  flex: 0 0 auto;
+  width: 6.5rem;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   white-space: nowrap;
 }
 

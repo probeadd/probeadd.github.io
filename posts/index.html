@@ -1,0 +1,40 @@
+---
+layout: default
+title: Archive
+---
+<h1>Archive</h1>
+
+{% if paginator.total_posts > 0 %}
+  {% assign posts_by_year = paginator.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+  <h2 class="archive-year">{{ year.name }}</h2>
+  <ul class="post-list">
+    {% for post in year.items %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d" }}</span>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+
+  {% if paginator.total_pages > 1 %}
+  <nav class="pagination">
+    {% if paginator.previous_page %}
+    <a class="prev" href="{{ paginator.previous_page_path | relative_url }}">← Newer</a>
+    {% else %}
+    <span class="prev disabled">← Newer</span>
+    {% endif %}
+
+    <span class="page-count">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+    {% if paginator.next_page %}
+    <a class="next" href="{{ paginator.next_page_path | relative_url }}">Older →</a>
+    {% else %}
+    <span class="next disabled">Older →</span>
+    {% endif %}
+  </nav>
+  {% endif %}
+{% else %}
+<p class="empty">No posts yet — check back soon.</p>
+{% endif %}

@@ -7,6 +7,17 @@ linkedin_url: https://www.linkedin.com/in/satrioadiprabowo/
 
 permalink: /posts/:title/
 
+# Pagination for the /posts/ archive (jekyll-paginate v1 — GitHub Pages safe)
+plugins:
+  - jekyll-paginate
+paginate: 10
+paginate_path: "/posts/page:num/"
+
+# Let kramdown leave raw $$...$$ delimiters in the HTML so MathJax renders them
+markdown: kramdown
+kramdown:
+  math_engine: null
+
 # Exclude tooling files from the built site
 exclude:
   - Gemfile
