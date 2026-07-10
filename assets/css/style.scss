@@ -10,6 +10,40 @@
   --border: #e5e5e5;
 }
 
+/* Latin Modern Roman — the default LaTeX typeface (Computer Modern's
+   successor). Self-hosted from latex-css (MIT / GUST Font License). */
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("{{ '/assets/fonts/latin-modern/LM-regular.woff2' | relative_url }}") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("{{ '/assets/fonts/latin-modern/LM-italic.woff2' | relative_url }}") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("{{ '/assets/fonts/latin-modern/LM-bold.woff2' | relative_url }}") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Latin Modern Roman";
+  src: url("{{ '/assets/fonts/latin-modern/LM-bold-italic.woff2' | relative_url }}") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -22,8 +56,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  font-family: "Latin Modern Roman", Georgia, "Times New Roman", Times, serif;
   font-size: 17px;
   line-height: 1.6;
 }
@@ -191,6 +224,11 @@ h2 {
 
 .post-content img {
   max-width: 100%;
+}
+
+.post-content pre,
+.post-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 .post-content pre {
