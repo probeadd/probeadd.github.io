@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data Science 101: Linear Regression & Python"
+title: "It's a Sample Post"
 date: 2026-07-09
 tags: [python, math, data-science]
 ---
